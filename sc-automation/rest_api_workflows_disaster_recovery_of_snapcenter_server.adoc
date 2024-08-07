@@ -1,0 +1,139 @@
+---
+permalink: sc-automation/rest_api_workflows_disaster_recovery_of_snapcenter_server.html 
+sidebar: sidebar 
+keywords: REST API, disaster recovery, DR 
+summary: A funcionalidade de recuperação de desastres do SnapCenter usa APIS REST para fazer backup do servidor SnapCenter. 
+---
+= APIs REST de recuperação de desastres (DR)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:firstname: [.lead]
+:author: [.lead]
+:authorinitials: [
+:authors: [.lead]
+
+
+A funcionalidade de recuperação de desastres (DR) do SnapCenter usa APIS REST para fazer backup do servidor SnapCenter. Execute as etapas a seguir antes de usar as APIs REST de DR.
+
+*Passos*
+
+. Crie um novo backup de recuperação de desastres do servidor, que restaura um servidor SnapCenter a partir de um backup de recuperação de desastres especificado usando a API REST do backup de recuperação de desastres: `/4.5/disasterrecovery/server/backup`
+. Abra a máquina do servidor secundário, mas antes de instalar o servidor SnapCenter no servidor secundário, você deve concluir os pré-requisitos.
++
+** O nome de host/FQDN de host do servidor alternativo deve ser o mesmo que o nome de host do servidor principal, mas o endereço IP pode ser diferente.
+** A versão secundária do servidor deve ser a mesma que o servidor principal.
+** O SnapCenter secundário deve ser instalado no mesmo local e na mesma porta que o primário.
+
+
+. Antes de acionar a operação de restauração de DR do servidor, você deve abrir o caminho de destino ou o caminho em que os backups de DR são armazenados após o desastre.
++
+** Certifique-se de que os arquivos de backup DR sejam copiados para o novo servidor SnapCenter usando o seguinte comando:
+`xcopy <Ssource_Path> \\<Destination_Server_IP>\<Folder_Path> /O /X /E /H /K {ex : xcopy C:\DRBackup \\10.225.81.114\c$\DRBackup /O /X /E /H /K}`
+
+
+. Instale o servidor SnapCenter na máquina secundária.
++
+** Ao executar a operação de restauração de DR, você deve garantir que nenhum trabalho esteja sendo executado relacionado ao servidor SnapCenter.
+
+
+. Instale o servidor SnapCenter secundário no mesmo local e na mesma porta do servidor primário.
++
+** Execute a operação de restauração de DR do servidor usando a API de restauração de DR:  `/4.5/disasterrecovery/server/restore`
++
+Se o plug-in não conseguir resolver o nome do host do servidor, faça login em cada um dos hosts do plug-in e adicione a entrada etc/host para o novo IP no formato <New IP> SC_Server_Name. Por exemplo, `10.225.81.35 SCServer1`
+
++
+As entradas do servidor etc/host não serão restauradas. Você pode restaurá-lo manualmente a partir da pasta de backup DR.
+
+
+
+
+
+
+NOTE: Para uma configuração F5, a operação de restauração é executada como independente, você deve executar um conjunto de comandos para criar o F5 novamente. Consulte, Link: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_Migrate_SnapCenter_migrate_to_another_Server["Como migrar o SnapCenter para outro servidor"^]
+
+
+NOTE: Após a restauração de DR, o host será adicionado, mas você deve instalar o plug-in manualmente.
+
+
+NOTE: O agendamento de backup do repositório será restaurado somente se você instalar o plug-in do SnapCenter para Windows e anexar LUN NetApp à máquina do servidor.
+
+
+NOTE: Se as DLLs estiverem corrompidas, você pode tentar reparar o servidor SnapCenter ou corrigir a instalação com defeito.
+
+
+NOTE: Se os arquivos NSM ou Config estiverem corrompidos, você poderá desinstalar e reinstalar o servidor SnapCenter com a mesma versão.
+
+
+NOTE: Se a VM estiver corrompida, abra outra VM ou uma máquina com o mesmo nome e instale o servidor SnapCenter com a mesma versão.
+
+
+
+== API REST compatível com recuperação de desastres do servidor SnapCenter
+
+Usando APIs REST, você pode executar as seguintes operações na página Swagger APIs REST. Para obter informações sobre como acessar a página Swagger, link:https://docs.netapp.com/us-en/snapcenter/sc-automation/task_how%20to_access_rest_apis_using_the_swagger_api_web_page.html["Como acessar APIs REST usando a página da Web da API Swagger"]consulte .
+
+.Antes de começar
+* Você deve fazer login como usuário Administrador do SnapCenter.
+* O servidor SnapCenter deve estar ativo e em execução para executar a API de restauração de DR.
+* Se as DLLs estiverem corrompidas, repare a instalação do servidor SnapCenter.
+* Se o NSM estiver corrompido ou os arquivos de configuração estiverem corrompidos, desinstale e reinstale o servidor SnapCenter com a mesma versão.
+* Se a VM estiver corrompida, abra outra VM com o mesmo nome e instale o servidor SnapCenter com a mesma versão.
+
+
+.Sobre esta tarefa
+O DR do servidor SnapCenter suporta todos os plug-ins.
+
+|===
+| Descrição | API REST | Método HTTP 
+
+
+ a| 
+Buscar backups de DR existentes do servidor SnapCenter
+
+Você deve fornecer o caminho de destino onde os backups de DR estão armazenados.
+ a| 
+`/4.5/disasterrecovery/server/backup?targetpath={path}`
+ a| 
+OBTER
+
+
+
+ a| 
+Crie um novo backup de recuperação de desastres do servidor.
+ a| 
+`/4.5/disasterrecovery/server/backup`
+ a| 
+POST
+
+
+
+ a| 
+Restaura um servidor SnapCenter a partir de um backup de recuperação de desastres de servidor especificado.
+ a| 
+`/4.5/disasterrecovery/server/restore`
+ a| 
+POST
+
+
+
+ a| 
+Exclua o backup do DR do servidor com base no nome do backup.
+ a| 
+``/4.5/disasterrecovery/server/backup``
+ a| 
+ELIMINAR
+
+
+
+ a| 
+Ative ou desative o DR de armazenamento
+ a| 
+`/4.5/disasterrecovery/storage`
+ a| 
+POST
+
+|===
+.Informações relacionadas
+Veja link:https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["APIs de recuperação de desastres"^]o vídeo.

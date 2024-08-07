@@ -1,0 +1,165 @@
+---
+permalink: protect-hana/task_create_backup_policies_for_sap_hana_databases.html 
+sidebar: sidebar 
+keywords: SnapCenter Plug-in for SAP HANA Database 
+summary: Antes de usar o SnapCenter para fazer backup dos recursos do banco de dados do SAP HANA, você precisa criar uma política de backup para o recurso ou grupo de recursos que deseja fazer backup. Uma política de backup é um conjunto de regras que regem como você gerencia, agenda e retém backups. 
+---
+= Criar políticas de backup para bancos de dados SAP HANA
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Antes de usar o SnapCenter para fazer backup dos recursos do banco de dados do SAP HANA, você precisa criar uma política de backup para o recurso ou grupo de recursos que deseja fazer backup. Uma política de backup é um conjunto de regras que regem como você gerencia, agenda e retém backups.
+
+.Antes de começar
+* Você precisa ter definido sua estratégia de backup.
++
+Para obter detalhes, consulte as informações sobre como definir uma estratégia de proteção de dados para bancos de dados SAP HANA.
+
+* Você precisa se preparar para a proteção de dados concluindo tarefas como instalar o SnapCenter, adicionar hosts, configurar conexões do sistema de storage e adicionar recursos.
+* O administrador do SnapCenter deve ter atribuído as SVMs para os volumes de origem e destino a você se estiver replicando cópias Snapshot em um espelho ou cofre.
++
+Além disso, você pode especificar as configurações de replicação, script e aplicativo na política. Essas opções economizam tempo quando você deseja reutilizar a política para outro grupo de recursos.
+
+
+
+.Sobre esta tarefa
+* Replicação do sistema SAP HANA
++
+** Você pode proteger o sistema principal do SAP HANA e todas as operações de proteção de dados podem ser executadas.
+** Você pode proteger o sistema SAP HANA secundário, mas os backups não podem ser criados.
++
+Após o failover, toda a operação de proteção de dados pode ser executada à medida que o sistema SAP HANA secundário se torna o sistema SAP HANA primário.
+
++
+Você não pode criar um backup para o volume de dados do SAP HANA, mas o SnapCenter continua a proteger os volumes que não são de dados (NDV).
+
+
+
+
+
+.Passos
+. No painel de navegação esquerdo, clique em *Configurações*.
+. Na página Configurações, clique em *políticas*.
+. Clique em *novo*.
+. Na página Nome, insira o nome e a descrição da política.
+. Na página Configurações, execute as seguintes etapas:
++
+** Escolha o tipo de cópia de segurança:
++
+|===
+| Se você quiser... | Faça isso... 
+
+
+ a| 
+Efetue uma verificação de integridade da base de dados
+ a| 
+Selecione *Backup baseado em arquivos*. Somente os locatários ativos são copiados.
+
+
+
+ a| 
+Crie um backup usando a tecnologia de cópia Snapshot
+ a| 
+Selecione *Snapshot based*.
+
+|===
+** Especifique o tipo de agendamento selecionando *on demand*, *Hourly*, *Daily*, *Weekly* ou *Monthly*.
++
+
+NOTE: Você pode especificar a programação (data de início, data de término e frequência) para a operação de backup enquanto cria um grupo de recursos. Isso permite que você crie grupos de recursos que compartilham a mesma política e frequência de backup, mas também permite que você atribua diferentes programações de backup a cada política.
+
++
+image::../media/backup_settings.gif[definições de cópia de segurança]
+
++
+
+NOTE: Se você tiver agendado para as 2:00 da manhã, o horário não será acionado durante o horário de verão (DST).
+
+** Na seção *Configurações personalizadas de backup*, forneça quaisquer configurações específicas de backup que tenham que ser passadas para o formato de valor de chave do plug-in.
++
+Você pode fornecer vários valores-chave a serem passados para o plug-in.
+
+
+
+. Na página retenção, especifique as configurações de retenção para o tipo de backup e o tipo de agendamento selecionado na página tipo de backup:
++
+|===
+| Se você quiser... | Então... 
+
+
+ a| 
+Mantenha um certo número de cópias Snapshot
+ a| 
+Selecione *Total de cópias snapshot a serem mantidas* e especifique o número de cópias snapshot que você deseja manter.
+
+Se o número de cópias Snapshot exceder o número especificado, as cópias snapshot serão excluídas com as cópias mais antigas excluídas primeiro.
+
+
+NOTE: O valor máximo de retenção é 1018 para recursos no ONTAP 9.4 ou posterior e 254 para recursos no ONTAP 9.3 ou anterior. Os backups falharão se a retenção for definida para um valor maior do que o que a versão subjacente do ONTAP suporta.
+
+
+IMPORTANT: Para backups baseados em cópias Snapshot, defina a contagem de retenção para 2 ou superior, se quiser habilitar a replicação do SnapVault. Se você definir a contagem de retenção como 1, a operação de retenção poderá falhar porque a primeira cópia Snapshot é a cópia Snapshot de referência para a relação SnapVault até que uma cópia Snapshot mais recente seja replicada para o destino.
+
+
+NOTE: Para replicação do sistema SAP HANA, recomenda-se adicionar todos os recursos do sistema SAP HANA a um grupo de recursos. Isso garante que o número certo de backups seja retido.
+
+
+NOTE: Para a replicação do sistema SAP HANA, o total de cópias Snapshot obtidas será igual ao conjunto de retenção para o grupo de recursos. A remoção da cópia Snapshot mais antiga é baseada em qual nó a cópia Snapshot mais antiga está localizada. Por exemplo, a retenção está definida como 7 para um grupo de recursos com SAP HANA System Replication primário e SAP HANA System Replication secundário. Você pode tirar um máximo de 7 cópias Snapshot de cada vez, incluindo SAP HANA System Replication primário e SAP HANA System Replication secundário.
+
+
+
+ a| 
+Mantenha as cópias Snapshot por um determinado número de dias
+ a| 
+Selecione *manter cópias Snapshot para* e especifique o número de dias para os quais deseja manter as cópias Snapshot antes de excluí-las.
+
+|===
+. Para backups baseados em cópia Snapshot, especifique as configurações de replicação na página replicação:
++
+|===
+| Para este campo... | Faça isso... 
+
+
+ a| 
+*Atualizar SnapMirror depois de criar uma cópia Snapshot local*
+ a| 
+Selecione este campo para criar cópias espelhadas dos conjuntos de backup em outro volume (replicação SnapMirror).
+
+Se a relação de proteção no ONTAP for do tipo espelho e Cofre e se você selecionar somente essa opção, a cópia Snapshot criada no primário não será transferida para o destino, mas será listada no destino. Se esta cópia Snapshot for selecionada no destino para executar uma operação de restauração, o local secundário não estará disponível para a mensagem de erro de backup abobadado/espelhado selecionada será exibida.
+
+
+
+ a| 
+*Atualizar SnapVault depois de criar uma cópia Snapshot local*
+ a| 
+Selecione esta opção para executar a replicação de backup disco a disco (backups SnapVault).
+
+
+
+ a| 
+*Etiqueta de política secundária*
+ a| 
+Selecione uma etiqueta Snapshot.
+
+Dependendo do rótulo da cópia Snapshot selecionado, o ONTAP aplica a política de retenção da cópia snapshot secundária que corresponde ao rótulo.
+
+
+NOTE: Se você selecionou *Atualizar SnapMirror depois de criar uma cópia Snapshot local*, você pode especificar opcionalmente o rótulo de política secundária. No entanto, se você selecionou *Atualizar SnapVault depois de criar uma cópia Snapshot local*, especifique o rótulo de política secundária.
+
+
+
+ a| 
+*Contagem de tentativas de erro*
+ a| 
+Introduza o número máximo de tentativas de replicação que podem ser permitidas antes de a operação parar.
+
+|===
++
+
+NOTE: Você deve configurar a política de retenção do SnapMirror no ONTAP para o storage secundário para evitar alcançar o limite máximo de cópias Snapshot no storage secundário.
+
+. Revise o resumo e clique em *Finish*.
+

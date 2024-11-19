@@ -139,7 +139,7 @@ NOTE: A licença de teste (número de série que termina com 50) não pode ser e
 .Passos
 . No painel de navegação esquerdo, selecione *Configurações*.
 . Na página Configurações, selecione *Software*.
-. Na seção Licença da página Software, selecione *Add* (image:../media/add_policy_from_resourcegroup.gif["Um ícone de mais"]).
+. Na seção Licença da página Software, selecione *Adicionar*.
 . No assistente Adicionar licença SnapCenter, selecione um dos seguintes métodos para obter a licença que deseja adicionar:
 +
 |===

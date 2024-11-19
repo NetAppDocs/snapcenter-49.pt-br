@@ -34,7 +34,7 @@ O URL padrão da GUI é uma conexão segura com a porta padrão 8146 no servidor
 
 Para a implantação de alta disponibilidade (HA), você deve acessar o SnapCenter usando o IP _\https://Virtual_Cluster_IP_or_FQDN:8146_. do cluster virtual Se você não vir a IU do SnapCenter ao navegar para _\https://Virtual_Cluster_IP_or_FQDN:8146_ no Internet Explorer (IE), você deve adicionar o endereço IP do cluster virtual ou FQDN como um site confiável no IE em cada host de plug-in ou desativar a Segurança aprimorada do IE em cada host de plug-in. Para obter mais informações, https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Unable_to_access_cluster_IP_address_from_outside_network["Não é possível acessar o endereço IP do cluster a partir da rede externa"^]consulte .
 
-Além de usar a GUI do SnapCenter, você pode usar cmdlets do PowerShell para criar scripts para executar operações de configuração, backup e restauração. Alguns cmdlets podem ter sido alterados com cada versão do SnapCenter. O https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^] tem os detalhes.
+Além de usar a GUI do SnapCenter, você pode usar cmdlets do PowerShell para criar scripts para executar operações de configuração, backup e restauração. Alguns cmdlets podem ter sido alterados com cada versão do SnapCenter. O https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^] tem os detalhes.
 
 
 NOTE: Se estiver a iniciar sessão no SnapCenter pela primeira vez, tem de iniciar sessão utilizando as credenciais fornecidas durante o processo de instalação.

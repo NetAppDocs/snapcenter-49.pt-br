@@ -188,7 +188,7 @@ Para obter informações detalhadas sobre cmdlets do PowerShell, use a ajuda do 
 
 
 
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^].
+https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^].
 
 
 

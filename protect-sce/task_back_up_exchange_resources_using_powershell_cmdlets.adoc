@@ -116,4 +116,4 @@ C:\PS> Get-SmJobSummaryReport -JobId 168
 ----
 
 
-As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^]consulte .
+As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^]consulte .

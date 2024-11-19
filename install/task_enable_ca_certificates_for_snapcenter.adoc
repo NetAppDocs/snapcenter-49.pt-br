@@ -18,7 +18,7 @@ Você deve configurar os certificados da CA e ativar a validação do certificad
 * Você pode exibir o status do certificado para o servidor SnapCenter usando o cmdlet Get-SmCertificateSettings.
 
 
-As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode consultar a https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^].
+As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode consultar a https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^].
 
 *Passos*
 
@@ -31,10 +31,10 @@ As informações sobre os parâmetros que podem ser usados com o cmdlet e suas d
 
 O host de guia hosts gerenciados exibe um cadeado e a cor do cadeado indica o status da conexão entre o servidor SnapCenter e o host do plug-in.
 
-* image:../media/enable_ca_issues_icon.png[""]* * Indica que não há certificado CA habilitado ou atribuído ao host do plug-in.
-* image:../media/enable_ca_good_icon.png[""]* * Indica que o certificado da CA foi validado com êxito.
-* image:../media/enable_ca_failed_icon.png[""]* * Indica que o certificado da CA não pôde ser validado.
-* image:../media/enable_ca_undefined_icon.png[""]* * indica que as informações de conexão não puderam ser recuperadas.
+* image:../media/enable_ca_issues_icon.png["ícone de problemas"]* * Indica que não há certificado CA habilitado ou atribuído ao host do plug-in.
+* image:../media/enable_ca_good_icon.png["bom ícone"]* * Indica que o certificado da CA foi validado com êxito.
+* image:../media/enable_ca_failed_icon.png["ícone com falha"]* * Indica que o certificado da CA não pôde ser validado.
+* image:../media/enable_ca_undefined_icon.png["ícone indefinido"]* ]* indica que as informações de conexão não puderam ser recuperadas.
 
 
 

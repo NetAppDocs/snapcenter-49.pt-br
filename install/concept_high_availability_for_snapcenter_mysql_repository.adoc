@@ -19,7 +19,7 @@ Para usar o recurso de alta disponibilidade (HA) do MySQL, você deve configurar
 
 O SnapCenter fornece os cmdlets _get-SmRepositoryConfig_ e _set-SmRepositoryConfig_ do PowerShell para gerenciar a replicação do MySQL.
 
-As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode também consultar o https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^].
+As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode também consultar o https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^].
 
 Você deve estar ciente das limitações relacionadas ao recurso HA do MySQL:
 

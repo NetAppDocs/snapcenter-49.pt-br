@@ -200,7 +200,7 @@ O SnapCenter permite-lhe utilizar as variáveis de ambiente predefinidas quando 
 
 .. Na seção Configurações de parâmetros do banco de dados, modifique os valores dos parâmetros do banco de dados pré-preenchidos que são usados para inicializar o banco de dados.
 +
-Pode adicionar parâmetros adicionais clicando em *image:../media/add_policy_from_resourcegroup.gif[""]*.
+Você pode adicionar parâmetros adicionais clicando image:../media/add_policy_from_resourcegroup.gif["adicionar política do grupo de recursos"]em .
 
 +
 Se você estiver usando o Oracle Standard Edition e o banco de dados estiver sendo executado no modo de log de arquivamento ou se desejar restaurar um banco de dados do log de reprocessamento de arquivo, adicione os parâmetros e especifique o caminho.

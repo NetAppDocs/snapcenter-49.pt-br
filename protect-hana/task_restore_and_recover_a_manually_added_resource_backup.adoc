@@ -18,14 +18,13 @@ Você pode usar o SnapCenter para restaurar e recuperar dados de um ou mais back
 * Você deve ter cancelado qualquer operação de backup que esteja atualmente em andamento para o recurso ou grupo de recursos que deseja restaurar.
 * Para comandos pré-restauração, pós restauração, montagem e desmontagem, você deve verificar se os comandos existem na lista de comandos disponível no host do plug-in a partir dos seguintes caminhos:
 +
-Para o Windows: _C: Arquivos de programas/NetApp/SnapCenter/SnapCenter Plug-in Creator/etc/allowed_commands_list.txt_
-
-+
-Para Linux: _/var/opt/SnapCenter/scc/allowed_commands_list.txt_
-
+** Para Windows: _C: Arquivos de programas/NetApp/SnapCenter/SnapCenter Plug-in Creator/etc/allowed_commands.config_
+** Para Linux: _/opt/SnapCenter/scc/etc/allowed_commands.config_
 +
 
 NOTE: Se os comandos não existirem na lista de comandos, a operação falhará.
+
+
 
 
 

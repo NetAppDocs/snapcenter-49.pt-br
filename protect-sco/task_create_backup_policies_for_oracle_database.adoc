@@ -107,7 +107,7 @@ Selecione *Eliminar registos de arquivo a partir dos destinos que fazem parte da
 
 |===
 +
-image:../media/sco_backuppolicy_prunning.gif[""]
+image:../media/sco_backuppolicy_prunning.gif["evitar a política de backup"]
 
 
 

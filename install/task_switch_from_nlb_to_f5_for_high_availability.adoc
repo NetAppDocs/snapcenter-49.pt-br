@@ -20,6 +20,6 @@ Você pode alterar sua configuração do SnapCenter HA de balanceamento de carga
 . Inicie uma sessão usando o cmdlet Open-SmConnection e insira suas credenciais.
 . Atualize o servidor SnapCenter para apontar para o endereço IP do cluster F5 usando o cmdlet Update-SmServerCluster.
 +
-As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode também consultar o https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^].
+As informações sobre os parâmetros que podem ser usados com o cmdlet e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode também consultar https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html[]
 
 

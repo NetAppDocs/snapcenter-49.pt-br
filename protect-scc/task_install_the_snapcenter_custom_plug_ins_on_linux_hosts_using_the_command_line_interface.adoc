@@ -35,7 +35,7 @@ Você pode acessar esse caminho a partir do host onde o servidor SnapCenter est�
 ----
 . Adicione o host ao servidor SnapCenter usando o cmdlet Add-Smhost e os parâmetros necessários.
 +
-As informações sobre os parâmetros que podem ser usados com o comando e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode também consultar o https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^].
+As informações sobre os parâmetros que podem ser usados com o comando e suas descrições podem ser obtidas executando _get-Help command_name_. Em alternativa, pode também consultar o https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^].
 
 . Faça login no SnapCenter e faça o upload do plug-in personalizado a partir da IU ou usando cmdlets do PowerShell.
 +
@@ -45,6 +45,6 @@ Pode carregar o plug-in personalizado a partir da IU consultando link:task_add_h
 A ajuda do cmdlet SnapCenter e as informações de referência do cmdlet contêm mais informações sobre cmdlets do PowerShell.
 
 +
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["Guia de referência de cmdlet do software SnapCenter"^].
+https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["Guia de referência de cmdlet do software SnapCenter"^].
 
 

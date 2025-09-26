@@ -6790,7 +6790,6 @@
   <block id="953acf14bebe77c11e648186f3957214" category="list-text">Você deve ter um usuário com permissões sysadmin no SQL Server.</block>
   <block id="d165009fc919b7c43f63036983c47ae0" category="paragraph">O plug-in do SnapCenter para Microsoft SQL Server usa o Microsoft VDI Framework, que requer acesso sysadmin.</block>
   <block id="9221af74572734362746f0af9104d884" category="inline-link">Artigo 2926557: As operações de backup e restauração do SQL Server VDI exigem o sysadmin Privileges</block>
-  <block id="c081ea6f4c7f13224651487050d87831" category="paragraph"><block ref="c081ea6f4c7f13224651487050d87831" category="inline-link-rx"></block></block>
   <block id="9c9a08a242e9f6311be9fa5bd945d582" category="list-text">Se o SnapManager for instalado, você deve ter parado ou desativado o serviço e as programações.</block>
   <block id="1931c747684bb6010ac638ae2be606b3" category="paragraph">Se você planeja importar tarefas de backup ou clone para o SnapCenter, não desinstale o SnapManager para o Microsoft SQL Server.</block>
   <block id="024ecfe0da835b1f362b5e64ec1408ab" category="list-text">O host deve ser resolvido para o nome de domínio totalmente qualificado (FQDN) do servidor.</block>
@@ -8050,8 +8049,6 @@
   <block id="5753398a53564a3efa071ab4a2a25e75" category="list-text">Execute a operação de restauração de DR do servidor usando a API de restauração de DR: <block ref="60709718d7a794a4b06a075a7df6ad86" prefix=" " category="inline-code"></block></block>
   <block id="e729f7885b63addbf250ef2f33329efb" category="paragraph">Se o plug-in não conseguir resolver o nome do host do servidor, faça login em cada um dos hosts do plug-in e adicione a entrada etc/host para o novo IP no formato &lt;New IP&gt; SC_Server_Name. Por exemplo,<block ref="787ca03a3d14e5cce46cedf0bba7ac2b" prefix=" " category="inline-code"></block></block>
   <block id="421f836e09d607d08dad463276b0c52e" category="paragraph">As entradas do servidor etc/host não serão restauradas. Você pode restaurá-lo manualmente a partir da pasta de backup DR.</block>
-  <block id="cf6d86307a7decebf79e2175ef2bc96f" category="inline-link">Como migrar o SnapCenter para outro servidor</block>
-  <block id="40b06602d6310e9f595ec07f57b84775" category="admonition">Para uma configuração F5, a operação de restauração é executada como independente, você deve executar um conjunto de comandos para criar o F5 novamente. Consulte, Link:<block ref="fb5c34144d693d79610d99e63e5e4e12" category="inline-link-rx"></block></block>
   <block id="d51a9a84121a4ca319f6f0b5d481f073" category="admonition">Após a restauração de DR, o host será adicionado, mas você deve instalar o plug-in manualmente.</block>
   <block id="2dce035ff36be1c01663c842167acf77" category="admonition">O agendamento de backup do repositório será restaurado somente se você instalar o plug-in do SnapCenter para Windows e anexar LUN NetApp à máquina do servidor.</block>
   <block id="90969e9b7bcd66fedcf0339db7d5e13e" category="admonition">Se as DLLs estiverem corrompidas, você pode tentar reparar o servidor SnapCenter ou corrigir a instalação com defeito.</block>
@@ -8514,4 +8511,5 @@
   <block id="d127c7070231e882bd97e8f2760d0a4f" category="sidebar">Documentação do software SnapCenter</block>
   <block id="c23d56866a5b11fd0d8dc189fcf21298" category="list-text"><block ref="341e3fddad4b27511133b6917a75bb8a" category="inline-link-rx"></block></block>
   <block id="57cf9c4ee485623172a5c60cbee423a4" category="paragraph">Veja <block ref="96716f545c5cf1a209bf10c1a798ce38" category="inline-link-macro-rx"></block>o vídeo.</block>
+  <block id="cb5d59c817a7392efa454c9c69508067" category="paragraph"><block ref="cb5d59c817a7392efa454c9c69508067" category="inline-link-rx"></block></block>
 </blocks>

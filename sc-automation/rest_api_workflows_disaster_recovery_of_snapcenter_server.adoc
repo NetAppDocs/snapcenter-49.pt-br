@@ -46,27 +46,17 @@ Se o plug-in não conseguir resolver o nome do host do servidor, faça login em 
 +
 As entradas do servidor etc/host não serão restauradas. Você pode restaurá-lo manualmente a partir da pasta de backup DR.
 
++
+*** Após a restauração de DR, o host será adicionado, mas você deve instalar o plug-in manualmente.
+*** O agendamento de backup do repositório será restaurado somente se você instalar o plug-in do SnapCenter para Windows e anexar LUN NetApp à máquina do servidor.
+*** Se as DLLs estiverem corrompidas, você pode tentar reparar o servidor SnapCenter ou corrigir a instalação com defeito.
+*** Se os arquivos NSM ou Config estiverem corrompidos, você poderá desinstalar e reinstalar o servidor SnapCenter com a mesma versão.
+*** Se a VM estiver corrompida, abra outra VM ou uma máquina com o mesmo nome e instale o servidor SnapCenter com a mesma versão.
 
 
 
 
 
-NOTE: Para uma configuração F5, a operação de restauração é executada como independente, você deve executar um conjunto de comandos para criar o F5 novamente. Consulte, Link: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/How_to_Migrate_SnapCenter_migrate_to_another_Server["Como migrar o SnapCenter para outro servidor"^]
-
-
-NOTE: Após a restauração de DR, o host será adicionado, mas você deve instalar o plug-in manualmente.
-
-
-NOTE: O agendamento de backup do repositório será restaurado somente se você instalar o plug-in do SnapCenter para Windows e anexar LUN NetApp à máquina do servidor.
-
-
-NOTE: Se as DLLs estiverem corrompidas, você pode tentar reparar o servidor SnapCenter ou corrigir a instalação com defeito.
-
-
-NOTE: Se os arquivos NSM ou Config estiverem corrompidos, você poderá desinstalar e reinstalar o servidor SnapCenter com a mesma versão.
-
-
-NOTE: Se a VM estiver corrompida, abra outra VM ou uma máquina com o mesmo nome e instale o servidor SnapCenter com a mesma versão.
 
 
 
